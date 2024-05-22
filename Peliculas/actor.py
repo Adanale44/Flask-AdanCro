@@ -1,4 +1,8 @@
-@app. route('/actores')
+from flask import Blueprint, render_template
+from . import db
+
+bp = Blueprint('actor',__name__, url_prefix='/actores')
+@bp. route('/')
 def actor():
     consulta = """
      SELECT first_name,last_name FROM actor
