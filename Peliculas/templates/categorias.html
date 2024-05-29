@@ -1,0 +1,8 @@
+{%extends 'principal_base.html'} {%block titulo%}Lista de Categorias{%endblock%}
+{%block encabezado%}Categorias:{%endblock%} {%block contenido%}
+<ul>
+  {% for categoria in categorias %}
+  <li>{{categoria['name']}}</li>
+  {%endfor%}
+</ul>
+{%endblock%}

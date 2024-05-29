@@ -1,19 +1,8 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Lista de actores</title>
-    <link
-      rel="stylesheet"
-      type="text/css "
-      href="{{ url_for('static',filename='style.css')}}"
-    />
-  </head>
-  <body>
-    <h1>Actores</h1>
-    <ul>
-      {% for actor in actores %}
-      <li>{{actor['first_name']}} {{actor['last_name']}}</li>
-      {% endfor %}
-    </ul>
-  </body>
-</html>
+{% extends 'principal_base.html' %} {% block titulo %} Lista de actores {%
+endblock %} {%block encabezado%}Actores{%endblock%} {%block contenido%}
+<ul>
+  {% for actor in actores %}
+  <li>{{actor['first_name']}} {{actor['last_name']}}</li>
+  {% endfor %}
+</ul>
+{%endblock%}
