@@ -15,5 +15,8 @@ def achi():
 from . import actor
 app.register_blueprint(actor.bp) 
 
+from . import categorias
+app.register_blueprint(categorias.bp) 
+
 
     

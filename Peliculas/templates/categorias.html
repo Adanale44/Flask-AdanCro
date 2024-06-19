@@ -1,8 +1,9 @@
-{%extends 'principal_base.html'} {%block titulo%}Lista de Categorias{%endblock%}
-{%block encabezado%}Categorias:{%endblock%} {%block contenido%}
+{% extends 'principal_base.html' %} {% block title %}Lista de Categorias{%
+endblock %} {% block encabezado %}Categorias:{% endblock %} {% block contenido
+%}
 <ul>
   {% for categoria in categorias %}
   <li>{{categoria['name']}}</li>
-  {%endfor%}
+  {% endfor %}
 </ul>
-{%endblock%}
+{% endblock %}
