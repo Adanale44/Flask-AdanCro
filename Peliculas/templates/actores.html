@@ -1,8 +1,8 @@
 {% extends 'principal_base.html' %} {% block titulo %} Lista de actores {%
-endblock %} {%block encabezado%}Actores{%endblock%} {%block contenido%}
+endblock %} {%block encabezado%}Actores{% endblock %} {% block contenido %}
 <ul>
   {% for actor in actores %}
   <li>{{actor['first_name']}} {{actor['last_name']}}</li>
   {% endfor %}
 </ul>
-{%endblock%}
+{% endblock %}

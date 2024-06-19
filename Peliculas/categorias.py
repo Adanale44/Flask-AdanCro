@@ -3,7 +3,7 @@ from . import db
 
 bp = Blueprint('categoria',__name__, url_prefix='/categorias')
 @bp. route('/')
-def actor():
+def categoria():
     consulta = """
     SELECT name FROM category
     ORDER by name ASC
