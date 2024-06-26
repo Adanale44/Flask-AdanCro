@@ -14,3 +14,4 @@ def categoria():
     pagina = render_template('categorias.html',
                             categorias=lista_actores)
     return pagina
+

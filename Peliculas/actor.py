@@ -6,7 +6,7 @@ bp = Blueprint('actor',__name__, url_prefix='/actores')
 @bp. route('/')
 def actor():
     consulta = """
-     SELECT first_name,last_name FROM actor
+     SELECT first_name,last_name, actor_id FROM actor
      ORDER BY first_name ;
  """
     con = db.get_db()
@@ -14,4 +14,27 @@ def actor():
     lista_actores = res.fetchall()
     pagina = render_template('actores.html',
                             actores=lista_actores)
+    return pagina
+
+@bp.route('/<int:id>')
+def detalle(id):
+    consulta = """
+        SELECT first_name, last_name FROM actor
+        WHERE actor_id = ?
+    """
+
+    con = db.get_db()
+    res = con.execute(consulta, (id,))
+    actor = res.fetchone()
+    consultaa = """
+        SELECT title as titulo, f.film_id FROM film f
+        JOIN film_actor fil on f.film_id = fil.film_id
+        WHERE fil.actor_id = ?
+    """
+
+    res = con.execute(consultaa, (id,))
+    lista_peliculas = res.fetchall()
+    pagina = render_template("detallado_actores.html",
+                                  actor=actor,
+                                  peliculas=lista_peliculas)
     return pagina

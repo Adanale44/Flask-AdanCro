@@ -22,4 +22,6 @@ from . import lenguages
 app.register_blueprint(lenguages.bp) 
 
 
+
+
     

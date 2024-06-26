@@ -1,8 +1,22 @@
-{% extends 'principal_base.html' %} {% block titulo %} Lista de actores {%
-endblock %} {%block encabezado%}Actores{% endblock %} {% block contenido %}
-<ul>
-  {% for actor in actores %}
-  <li>{{actor['first_name']}} {{actor['last_name']}}</li>
-  {% endfor %}
-</ul>
-{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>{% block titulo %} Actores {% endblock %}</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename ='style.css') }}"
+    />
+  </head>
+  <body>
+    <h1>Actores</h1>
+    <ul>
+      {% for actor in actores %}
+      <li>
+        <a href="{{url_for('actor.detalle', id=actor['actor_id'])}}">
+          {{actor['first_name'] }} {{actor['last_name'] }}</a
+        >
+      </li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
