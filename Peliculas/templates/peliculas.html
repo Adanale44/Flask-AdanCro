@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename ='style.css') }}">
 </head>
 <body>
-    <h1>Pelicula</h1>
+    <h1>Peliculas</h1>
     <ul>
       {% for pelicula in peliculas %} 
       <li><a href="{{url_for('Peliculas.detalle', id=pelicula['film_id'])}}"> {{ pelicula['titulo'] }}</a></li>
