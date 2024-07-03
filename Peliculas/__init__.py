@@ -21,6 +21,8 @@ app.register_blueprint(categorias.bp)
 from . import lenguages
 app.register_blueprint(lenguages.bp) 
 
+from . import peliculas
+app.register_blueprint(peliculas.bp) 
 
 
 
